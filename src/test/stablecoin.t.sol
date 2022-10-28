@@ -21,12 +21,12 @@ pragma solidity >=0.5.12;
 
 import "ds-test/test.sol";
 
-import "../dai.sol";
+import "../stablecoin.sol";
 
 contract TokenUser {
-    Dai  token;
+    StableCoin  token;
 
-    constructor(Dai token_) public {
+    constructor(StableCoin token_) public {
         token = token_;
     }
 
@@ -92,7 +92,7 @@ contract DaiTest is DSTest {
     uint constant initialBalanceThis = 1000;
     uint constant initialBalanceCal = 100;
 
-    Dai token;
+    StableCoin token;
     Hevm hevm;
     address user1;
     address user2;
@@ -123,7 +123,7 @@ contract DaiTest is DSTest {
         self = address(this);
     }
 
-    function createToken() internal returns (Dai) {
+    function createToken() internal returns (StableCoin) {
         return new Dai(99);
     }
 
